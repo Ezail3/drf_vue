@@ -248,7 +248,7 @@ def index(request):
     
     //return HttpResponse(data) 这是错误的，刚才已经看了源码，只能传字符串
     //return HttpResponse(json.dumps(data)) 此时将data转为json，但其实返回是个长的像json的字符串
-	//return HttpResponse(json.dumps(data), content_type="application/json") 这样指定content_type才会返回真正json，这个用法对data_li这种列表也能用，但是这种方法不专业
+    //return HttpResponse(json.dumps(data), content_type="application/json") 这样指定content_type才会返回真正json，这个用法对data_li这种列表也能用，但是这种方法不专业
 ```
 
 用JsonReponse替代上述操作
