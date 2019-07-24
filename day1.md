@@ -101,7 +101,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-### 1.6 编写视图
+### 1.6 编写视图函数
 
 ```python
 vim app/views.py
