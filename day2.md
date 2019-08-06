@@ -177,7 +177,7 @@ class Users(object):
 		return HttpResponse("")
 		
 	def post(self, request, *args, **kwargs):
-	    # 修改用户信息
+	    	# 修改用户信息
 		return HttpResponse("")
 		
 	def put(self, request, *args, **kwargs):
