@@ -76,7 +76,7 @@ def articles(request, *args, **kwargs):
 
 浏览器会返回最后的四位数字
 
-惨呼保存在args这个元组中
+参数保存在args这个元组中
 请求地址：/articles/2003/03/03
 调用函数：views.article(request,"2003","03","03")
 ```
