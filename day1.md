@@ -108,7 +108,7 @@ vim app/views.py
 from django.http import HttpResponse
 
 def index(request):
-	return HttpResponse("hello world!!!")
+    return HttpResponse("hello world!!!")
 ```
 
 ### 1.7 配置app的url
@@ -118,7 +118,7 @@ vim app/urls.py
 from django.conf.urls import url
 from .views import index
 urlpatterns = [
-	url(r'^hello/', index, name='index')
+    url(r'^hello/', index, name='index')
 ]
 ```
 
