@@ -134,9 +134,9 @@ urlpatterns = [
 		 2.返回指定用户信息	/users/23/
 	=>	POST
 		 修改用户信息 /users/23
-						body: {
-							username: "ezail"
-						}
+				body: {
+					username: "ezail"
+				}
 	=》	PUT
 		 创建一个用户
 			/users/23
