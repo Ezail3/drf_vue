@@ -150,50 +150,50 @@ urlpatterns = [
 ```python
 views.py
 class Users(object):
-	http_method_names = ["get","post","put","delete"]
+    http_method_names = ["get","post","put","delete"]
 
     def as_view(self):
-	    def view(request, *args, **kwargs):
-			self.request = request
-			self.args = args
-			self.kwargs = kwargs
-			return self.dispath(request, *args, **kwargs)
-		return view
+        def view(request, *args, **kwargs):
+	    self.request = request
+	    self.args = args
+	    self.kwargs = kwargs
+	    return self.dispath(request, *args, **kwargs)
+	return view
 
-	def dispath(self, request, *args, **kwargs):
-		def view(request, *args, **kwargs):
-			if request.method.lower() in http_method_names:
-				handle = getattr(self, request.method.lower())
-			else:
-				return self.http_method_not_allowed
+    def dispath(self, request, *args, **kwargs):
+	def view(request, *args, **kwargs):
+	    if request.method.lower() in http_method_names:
+		handle = getattr(self, request.method.lower())
+	    else:
+		return self.http_method_not_allowed
 		
-			return handle(request, *args, **kwargs)	
+	return handle(request, *args, **kwargs)	
 		
-	def http_method_not_allowed(self, request, *args, **kwargs):
-		return HttpResponse("")
+    def http_method_not_allowed(self, request, *args, **kwargs):
+	return HttpResponse("")
 		
-	def get(self, request, *args, **kwargs):
-		# 返回用户列表
-		return HttpResponse("")
+    def get(self, request, *args, **kwargs):
+	# 返回用户列表
+	return HttpResponse("")
 		
-	def post(self, request, *args, **kwargs):
-	    	# 修改用户信息
-		return HttpResponse("")
+    def post(self, request, *args, **kwargs):
+	# 修改用户信息
+	return HttpResponse("")
 		
-	def put(self, request, *args, **kwargs):
-		# 创建用户
-		return HttpResponse("")
+    def put(self, request, *args, **kwargs):
+	# 创建用户
+	return HttpResponse("")
 		
-	def delete(self,request, *args, **kwargs):
-		# 删除用户		
-		return HttpResponse("")
+    def delete(self,request, *args, **kwargs):
+	# 删除用户		
+	return HttpResponse("")
 		
 		
 urls.py
 from .views import Users
 
 urlpatterns = [
-	url(r'^xxx/', Users.as_view())
+    url(r'^xxx/', Users.as_view())
 ]
 ```
 
@@ -204,14 +204,14 @@ vim app/views.py
 
 from django.views import View	
 class MyView(View):
-	def get(self, request, *args, **kwargs):
-		return HttpResponse("hello view")
+    def get(self, request, *args, **kwargs):
+	return HttpResponse("hello view")
 		
 vim app/urls.py
 from .views import Myview
 
 urlpatterns = [
-	url(r'^view/', MyView.as_view())
+    url(r'^view/', MyView.as_view())
 ]
 
 新开session验证：
@@ -329,9 +329,9 @@ class View:
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 class FooView(View):
-	@method_decorator(login_required)
-	def get(request, *args, **kwargs):
-        return HttpResponse("hello world")
+    @method_decorator(login_required)
+    def get(request, *args, **kwargs):
+    return HttpResponse("hello world")
 ```
 
 
@@ -348,8 +348,8 @@ from django.contrib.auth.models import User
 username = 'ezail'
 
 for i in range(1000):
-	name = "{}_{}".format(username, i)
-	User.objects.create_user(name, "{}@163.com".format(name), "123456")
+    name = "{}_{}".format(username, i)
+    User.objects.create_user(name, "{}@163.com".format(name), "123456")
 	
 select * from user limit 0,10
 select * from user limit 11,20
